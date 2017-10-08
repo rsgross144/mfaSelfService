@@ -1,0 +1,14 @@
+_Store
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+/target/
+
+.classpath
+.settings
+.project
