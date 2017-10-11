@@ -26,6 +26,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+        <dependency>
+		    <groupId>com.github.ulisesbocchio</groupId>
+		    <artifactId>spring-boot-security-saml</artifactId>
+		    <version>1.12</version>
+		</dependency>
        
     </dependencies>
 
