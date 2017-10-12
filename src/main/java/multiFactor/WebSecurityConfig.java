@@ -1,6 +1,6 @@
 package multiFactor;
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -58,6 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	
+
+	
 	
 	
 	@Override
@@ -75,6 +77,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	    // timeframe
 	    DSLWebSSOProfileConsumerImpl webSSOProfileConsumer = new DSLWebSSOProfileConsumerImpl();
 	    webSSOProfileConsumer.setMaxAuthenticationAge(ONE_WEEK_SECONDS);
+	    // the response skew accounts for difference in time between sp and idp
+	    // default is 60 seconds to account for drift, had to set to 120 in local environment
+	    webSSOProfileConsumer.setResponseSkew(120);  
 		
 	    http.httpBasic()
 	    	.disable()
